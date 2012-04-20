@@ -1,5 +1,11 @@
 defencoding UTF-8
 
+# 256色表示設定
+term xterm-256color
+
+# スクロールバッファは最大10000行にする
+defscrollback 10000
+
 # prefix キーの設定　Ctrl + t
 escape ^Tt
 
@@ -8,6 +14,7 @@ vbell on
 
 # 最終行にウィンドウ一覧を表示
 hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
+
 # ステータスラインの表示。
 defhstatus I^En:^EtI
 
@@ -28,4 +35,3 @@ bind q remove
 sorendition "+rb .G"
 
 defbce "on"
-term xterm-256color
