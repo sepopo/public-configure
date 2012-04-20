@@ -10,3 +10,5 @@
 !/.gitignore
 !/.gitosis.conf
 !/.toprc
+!/.lisp
+!/.tmux.conf
