@@ -23,7 +23,14 @@
 (set-face-background 'whitespace-space "DarkSlateGray")
 (set-face-foreground 'whitespace-tab "LightSlateGray")
 (set-face-background 'whitespace-tab "DarkSlateGray")
+;======================================================;
+;                  行末の空白を表示
+;======================================================;
 (setq-default show-trailing-whitespace t)
+;======================================================;
+;               行末の空白を自動的に削除
+;======================================================;
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;======================================================;
 ;             バックアップファイルを作らない
 ;======================================================;
@@ -77,12 +84,12 @@
 ;	       ("\\.shtml$" . html-helper-mode)
 ;		 ) auto-mode-alist))
 ;======================================================;
-;                   css-mode                  
+;                   css-mode
 ;======================================================;
 ;(autoload 'css-mode "css-mode")
 ;(setq auto-mode-alist (cons '("\\.css$" . css-mode) auto-mode-alist))
 ;======================================================;
-;                  範囲を色づけ                  
+;                  範囲を色づけ
 ;======================================================;
 (setq transient-mark-mode t)
 (setq highlight-nonselected-windows t)
@@ -92,5 +99,5 @@
 (mouse-wheel-mode t)
 (setq mouse-wheel-follow-mouse t)
 ;======================================================;
-;             対応する括弧を光らせる                 
+;             対応する括弧を光らせる
 ;======================================================;
