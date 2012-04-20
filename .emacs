@@ -8,7 +8,28 @@
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 ;======================================================;
-;　　　　　　　　　[F12]で列を数字表記
+;                      タブ可視化
+;======================================================;
+(setq whitespace-style
+      '(tabs tab-mark spaces space-mark))
+(setq whitespace-space-regexp "\\(\x3000+\\)")
+(setq whitespace-display-mappings
+      '((space-mark ?\x3000 [?\□])
+        (tab-mark   ?\t   [?\xBB ?\t])
+        ))
+(require 'whitespace)
+(global-whitespace-mode 1)
+(set-face-foreground 'whitespace-space "LightSlateGray")
+(set-face-background 'whitespace-space "DarkSlateGray")
+(set-face-foreground 'whitespace-tab "LightSlateGray")
+(set-face-background 'whitespace-tab "DarkSlateGray")
+(setq-default show-trailing-whitespace t)
+;======================================================;
+;             バックアップファイルを作らない
+;======================================================;
+(setq make-backup-files nil)
+;======================================================;
+;              [F12]で列を数字表記
 ;======================================================;
 (autoload 'setnu-mode "setnu" nil t)
 (global-set-key [f12] 'setnu-mode)
@@ -47,7 +68,7 @@
 ;======================================================;
 ;(setq auto-mode-alist
 ;      (append
-;       '(
+;	'(
 ;	  ("\\.h$"    . c++-mode)
 ;	   ("\\.hpp$"  . c++-mode)
 ;	    ("\\.txt$"  . text-mode)
